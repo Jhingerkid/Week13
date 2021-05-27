@@ -1,12 +1,12 @@
 import React from "react";
 import JobListing from "./jobListing";
 
-const JobList = (props) => {
+const AvailableJobList = (props) => {
   if (props.jobs.length === 0) {
     return null;
   }
   return (
-    <div className="job-list">
+    <div className="available-job-list">
       {props.jobs.data.map((job) => {
         return <JobListing key={job.id} jobName={job.name} score={job.score} />;
       })}
@@ -14,4 +14,4 @@ const JobList = (props) => {
   );
 };
 
-export default JobList;
+export default AvailableJobList;

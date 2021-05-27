@@ -1,22 +1,37 @@
 import "./App.css";
-import { getJobs } from "./Components/getJobs.js";
+import { getJobs } from "./getJobs.js";
 import React, { useState, useEffect } from "react";
-import JobList from "./Components/jobList";
+import AvailableJobList from "./Components/availableJobList.js";
 
 function App() {
   const [availableJobs, setJobs] = useState([]);
+  const [jobTitle, setTitle] = useState([]);
+  const [tempTitle, setTempTitle] = useState([]);
   useEffect(() => {
-    jobs(setJobs);
-  }, []);
+    jobs(setJobs, jobTitle);
+  }, [jobTitle]);
   return (
     <div className="App">
-      <JobList jobs={availableJobs} />
+      <AvailableJobList jobs={availableJobs} />
+      <div>
+        <input
+          type="text"
+          onChange={(event) => setTempTitle(event.target.value)}
+        />
+        <input
+          type="button"
+          value="Search"
+          onClick={() => {
+            setTitle(tempTitle);
+          }}
+        />
+      </div>
     </div>
   );
 }
 
-async function jobs(setJobs) {
-  const jobList = await getJobs();
+async function jobs(setJobs, jobTitle) {
+  const jobList = await getJobs(jobTitle);
   setJobs(jobList);
 }
 export default App;
