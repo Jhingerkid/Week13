@@ -1,1 +1,73 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
 
+.available-job-list {
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+}
+
+.selected-job-list {
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+}
+
+.job-item {
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.job-item button {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.job-listing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.search-jobs {
+  padding: 20px 0px 4% 0px;
+}
+
+.select-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  height: 60%;
+  border: 2px solid black;
+}
+
+.selected-jobs {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 60%;
+  border: 2px solid black;
+}
+
+.demand-skills {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+  height: 60%;
+  border: 2px solid black;
+}

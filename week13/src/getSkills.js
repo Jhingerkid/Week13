@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
-export async function getJobs(jobTitle) {
+export async function getSkills(jobTitle) {
   let url =
-    "https://emsiservices.com/emsi-open-proxy-service/postings/us/taxonomies/title?q=" +
+    "https://emsiservices.com/emsi-open-proxy-service/postings/us/taxonomies/skills?q=" +
     jobTitle +
-    "&limit=40";
+    "&limit=50";
   const getToken = () =>
     jwt.sign(
       {
@@ -19,6 +19,7 @@ export async function getJobs(jobTitle) {
       authorization: `Bearer ${getToken()}`,
     },
   });
-  const jobList = await response.json();
-  return jobList;
+  const skillList = await response.json();
+  console.log(skillList);
+  return skillList;
 }

@@ -7,8 +7,21 @@ const AvailableJobList = (props) => {
   }
   return (
     <div className="available-job-list">
+      <div className="job-listing">
+        <h2>Job Title</h2>
+        <h2>Score</h2>
+      </div>
       {props.jobs.data.map((job) => {
-        return <JobListing key={job.id} jobName={job.name} score={job.score} />;
+        return (
+          <JobListing
+            selectJobs={props.selectJobs}
+            selectedJobs={props.selectedJobs}
+            key={job.id}
+            id={job.id}
+            jobName={job.name}
+            score={job.score}
+          />
+        );
       })}
     </div>
   );
