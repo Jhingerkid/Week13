@@ -17,6 +17,7 @@ const SelectedJobList = (props) => {
             id={job.id}
             jobName={job.jobName}
             score={job.score}
+            setColor={props.setColor}
           />
         );
       })}

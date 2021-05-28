@@ -13,6 +13,7 @@ function App() {
   const [tempTitle, setTempTitle] = useState([]);
   const [skillList, setSkills] = useState([]);
   const [displaySkills, setDisplay] = useState([]);
+  const [jobCountColor, setColor] = useState("");
   useEffect(() => {
     jobs(setAvailableJobs, jobTitle);
     skills(setSkills, jobTitle);
@@ -29,6 +30,7 @@ function App() {
           setSkills={setSkills}
           setDisplay={setDisplay}
           displaySkills={displaySkills}
+          setColor={setColor}
         />
         <div className="search-jobs">
           <input
@@ -45,14 +47,20 @@ function App() {
         </div>
       </div>
       <div className="demand-skills">
-        <h1>In Demand</h1>
+        <h1>Skill Demand</h1>
         <SkillsList displaySkills={displaySkills} />
       </div>
       <div className="selected-jobs">
-        <h1>Selected Jobs</h1>
+        <div className="selected-job-header">
+          <h1>Selected Jobs</h1>
+          <div className="job-container">
+            <span id={jobCountColor}>{selectedJobs.length}</span>
+          </div>
+        </div>
         <SelectedJobList
           selectedJobs={selectedJobs}
           setSelectJobs={setSelectJobs}
+          setColor={setColor}
         />
       </div>
     </div>

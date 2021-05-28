@@ -2,6 +2,7 @@ import React from "react";
 
 const SelectedJobs = (props) => {
   function removeJob() {
+    props.setColor("red");
     var sJobList = [...props.selectedJobs];
     sJobList = sJobList.filter((item) => item.id !== props.id);
     props.setSelectJobs(sJobList);

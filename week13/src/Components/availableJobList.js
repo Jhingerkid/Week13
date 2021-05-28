@@ -24,6 +24,7 @@ const AvailableJobList = (props) => {
             setSkills={props.setSkills}
             setDisplay={props.setDisplay}
             displaySkills={props.displaySkills}
+            setColor={props.setColor}
           />
         );
       })}

@@ -3,6 +3,7 @@ import React from "react";
 const JobListing = (props) => {
   function selectJob(e) {
     e.preventDefault();
+    props.setColor("green");
     const sJobList = [...props.selectedJobs];
     let selectedJob = {
       jobName: props.jobName,
