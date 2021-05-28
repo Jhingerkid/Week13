@@ -20,6 +20,10 @@ const AvailableJobList = (props) => {
             id={job.id}
             jobName={job.name}
             score={job.score}
+            skillList={props.skillList}
+            setSkills={props.setSkills}
+            setDisplay={props.setDisplay}
+            displaySkills={props.displaySkills}
           />
         );
       })}

@@ -1,7 +1,6 @@
 import React from "react";
 
 const SelectedJobs = (props) => {
-  console.log("props", props);
   function removeJob() {
     var sJobList = [...props.selectedJobs];
     sJobList = sJobList.filter((item) => item.id !== props.id);

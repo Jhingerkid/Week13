@@ -20,6 +20,5 @@ export async function getSkills(jobTitle) {
     },
   });
   const skillList = await response.json();
-  console.log(skillList);
   return skillList;
 }

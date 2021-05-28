@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import AvailableJobList from "./Components/availableJobList.js";
 import SelectedJobList from "./Components/selectedJobList";
 import { getSkills } from "./getSkills";
+import SkillsList from "./Components/skillsList";
 
 function App() {
   const [availableJobs, setAvailableJobs] = useState([]);
@@ -11,7 +12,7 @@ function App() {
   const [jobTitle, setTitle] = useState([]);
   const [tempTitle, setTempTitle] = useState([]);
   const [skillList, setSkills] = useState([]);
-  console.log(skillList); // take this variable and display a math.random of the array to the demanded skills list whenever a job is added
+  const [displaySkills, setDisplay] = useState([]);
   useEffect(() => {
     jobs(setAvailableJobs, jobTitle);
     skills(setSkills, jobTitle);
@@ -24,6 +25,10 @@ function App() {
           selectedJobs={selectedJobs}
           selectJobs={setSelectJobs}
           jobs={availableJobs}
+          skillList={skillList}
+          setSkills={setSkills}
+          setDisplay={setDisplay}
+          displaySkills={displaySkills}
         />
         <div className="search-jobs">
           <input
@@ -39,7 +44,10 @@ function App() {
           />
         </div>
       </div>
-      <div className="demand-skills"></div>
+      <div className="demand-skills">
+        <h1>In Demand</h1>
+        <SkillsList displaySkills={displaySkills} />
+      </div>
       <div className="selected-jobs">
         <h1>Selected Jobs</h1>
         <SelectedJobList

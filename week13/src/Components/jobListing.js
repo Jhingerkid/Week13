@@ -1,7 +1,8 @@
 import React from "react";
 
 const JobListing = (props) => {
-  function selectJob() {
+  function selectJob(e) {
+    e.preventDefault();
     const sJobList = [...props.selectedJobs];
     let selectedJob = {
       jobName: props.jobName,
@@ -10,6 +11,12 @@ const JobListing = (props) => {
     };
     sJobList.push(selectedJob);
     props.selectJobs(sJobList);
+    var randomSkillNumber = Math.floor(
+      Math.random() * props.skillList.data.length
+    );
+    let randomSkill = props.skillList.data[randomSkillNumber].name;
+    let newDisplaySkills = props.displaySkills;
+    newDisplaySkills.push(randomSkill);
   }
   return (
     <div className="job-item">
@@ -18,8 +25,8 @@ const JobListing = (props) => {
         <span>{props.score}</span>
       </div>
       <button
-        onClick={() => {
-          selectJob();
+        onClick={(e) => {
+          selectJob(e);
         }}
       ></button>
     </div>
