@@ -9,8 +9,8 @@ import SkillsList from "./Components/skillsList";
 function App() {
   const [availableJobs, setAvailableJobs] = useState([]);
   const [selectedJobs, setSelectJobs] = useState([]);
-  const [jobTitle, setTitle] = useState([]);
-  const [tempTitle, setTempTitle] = useState([]);
+  const [jobTitle, setTitle] = useState("");
+  const [tempTitle, setTempTitle] = useState("");
   const [skillList, setSkills] = useState([]);
   const [displaySkills, setDisplay] = useState([]);
   const [jobCountColor, setColor] = useState("");

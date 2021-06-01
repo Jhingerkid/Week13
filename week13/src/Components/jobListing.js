@@ -29,7 +29,9 @@ const JobListing = (props) => {
         onClick={(e) => {
           selectJob(e);
         }}
-      ></button>
+      >
+        Add
+      </button>
     </div>
   );
 };

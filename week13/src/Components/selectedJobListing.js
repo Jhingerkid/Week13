@@ -17,7 +17,9 @@ const SelectedJobs = (props) => {
         onClick={() => {
           removeJob();
         }}
-      ></button>
+      >
+        Remove
+      </button>
     </div>
   );
 };
